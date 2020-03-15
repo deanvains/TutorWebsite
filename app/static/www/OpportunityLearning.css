@@ -1,13 +1,16 @@
 #logo {
   position: absolute;
-  z-index: -1;
+  top: 15px;
+  left: 15px;
+}
+
+#header {
 }
 .row {
   padding: 20px;
 }
 
 main {
-  padding-top: 200px;
   position: relative;
 }
 
