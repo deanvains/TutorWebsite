@@ -1,1 +1,3 @@
 FLASK_APP=website.py
+FLASK_RUN_PORT=59191
+FLASK_ENV=development

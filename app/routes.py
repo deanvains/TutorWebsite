@@ -13,12 +13,6 @@ def index():
 @app.route('/www/submitted',methods=["GET", "POST"])
 def submitted():
     if request.method == 'POST':
-        print("TEST")
-        name = "Dean"
-        email = "dean.vains@outlook.com"
-        phone = "0428802464"
-        state = "wa"
-        course = "applications"
         sendDetailsToDiscord(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
         
     if Response.status_code == 400:
@@ -30,12 +24,13 @@ class Form(Resource):
     def get(self):
         return {
             'Form': {
-                'firstname': 'Please input your first name',
-                'lastname': 'Please input your last name',
+                'name': 'Please input your last name',
                 'email': 'Please input your email',
                 'phone': 'Please input your phone',
+                'state' : 'please input your state',
+                'course' : 'please input your course'
         }
         }
 
 
-api.add_resource(Form, '/')
+api.add_resource(Form, '/api')
