@@ -1,23 +1,13 @@
-header {
+#logo {
+  position: absolute;
+  z-index: -1;
 }
-
-/* .navbar-brand {
-  padding: 10px !important;
-  font-size: 30px !important;
-} */
-
-/* .navbar {
-  background-color: #ca7ce5 !important;
-} */
-#myCarousel {
-  margin: auto;
-}
-
 .row {
   padding: 20px;
 }
 
 main {
+  padding-top: 200px;
   position: relative;
 }
 

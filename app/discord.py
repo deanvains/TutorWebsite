@@ -6,6 +6,6 @@ def sendDetailsToDiscord(name, email, phone, state, course):
     print(phone)
     print(state)
     print(course)
-    yag = yagmail.SMTP()
+    yag = yagmail.SMTP('deanvains18@gmail.com')
     contents = [name, email, phone, state, course]
-    yag.send('russell.error.reporting@gmail.com', 'New Client', contents)
+    yag.send('dean.vains@outlook.com', 'New Client', contents)

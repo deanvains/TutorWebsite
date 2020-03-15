@@ -10,13 +10,18 @@ api = Api(app)
 def index():
     return render_template("/www/index.html")
 
-@app.route('/www/submitted/',methods=["GET", "POST"])
+@app.route('/www/submitted',methods=["GET", "POST"])
 def submitted():
     if request.method == 'POST':
         print("TEST")
-        sendDetailsToDiscord(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course']) #need to ad request ip and request web client
-    if Response.status_code == 404:
-        return render_template("/www/error.html",error = 404)
+        name = "Dean"
+        email = "dean.vains@outlook.com"
+        phone = "0428802464"
+        state = "wa"
+        course = "applications"
+        sendDetailsToDiscord(name,email,phone,state,course) #need to ad request ip and request web client
+    if Response.status_code == 400:
+        return render_template("/www/error.html",error = 400)
 
     return render_template("/www/submitted.html")
 
