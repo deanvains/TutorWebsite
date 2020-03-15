@@ -4,15 +4,11 @@ from app.discord import sendDetailsToDiscord
 import sys
 
 @app.route('/',methods=["GET"])
-@app.route('/index',methods=["GET"])
+@app.route('/',methods=["GET"])
 def index():
     return render_template("index.html")
 
-@app.route('/about',methods=["GET"])
-def about():
-    return render_template("about.html")
-
-@app.route('/submitted',methods=["GET", "POST"])
+@app.route('/www/submitted/',methods=["GET", "POST"])
 def submitted():
     if request.method == 'POST':
         sendDetailsToDiscord(request.form['firstname'],request.form['lastname'],request.form['email'],request.form['phone'])
