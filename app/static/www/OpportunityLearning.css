@@ -1,15 +1,14 @@
 header {
-  position: absolute;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   padding: 10px !important;
   font-size: 30px !important;
-}
+} */
 
-.navbar {
+/* .navbar {
   background-color: #ca7ce5 !important;
-}
+} */
 #myCarousel {
   margin: auto;
 }
@@ -19,7 +18,6 @@ header {
 }
 
 main {
-  margin-top: 200px;
   position: relative;
 }
 
