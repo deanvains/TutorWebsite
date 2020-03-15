@@ -9,3 +9,5 @@ A simple static website for students looking to receive tutoring.
 ### to install all packages run the command:
 
 \$ pip install -r requirements.txt
+
+### Yagmail setup will need to be done on local machine before use

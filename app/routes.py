@@ -19,7 +19,8 @@ def submitted():
         phone = "0428802464"
         state = "wa"
         course = "applications"
-        sendDetailsToDiscord(name,email,phone,state,course) #need to ad request ip and request web client
+        sendDetailsToDiscord(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
+        
     if Response.status_code == 400:
         return render_template("/www/error.html",error = 400)
 
