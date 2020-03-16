@@ -23,8 +23,8 @@ h3 {
   color: #7718a9;
 }
 
-.blurb1 {
-  padding-left: 10%;
+#blurb1 {
+  padding-left: 5%;
 }
 
 #myBtn {
@@ -40,5 +40,5 @@ h3 {
 }
 
 form {
-  width: 300px;
+  width: 100%;
 }
