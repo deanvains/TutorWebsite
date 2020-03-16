@@ -6,8 +6,10 @@ from flask import render_template, request, Response, jsonify
 from app.emailServer import sendDetailsToEmail
 from flask_restful import Resource, Api
 import requests
+from flask_cors import CORS
 
 api = Api(app)
+CORS(app)
 
 GA_TRACKING_ID = os.environ.get("GA_TRACKING_ID")
 
