@@ -6,7 +6,7 @@ def sendDetailsToEmail(name, email, phone, state, course, address, browser):
 
     yag = yagmail.SMTP('deanvains18@gmail.com')
     contents = [message]
-    yag.send('dean.vains@outlook.com', 'New Client', contents)
+    yag.send('russell.error.reporting@gmail.com', 'New Client', contents)
 
 
 def createMessage(name, email, phone, state, course, address, browser):
