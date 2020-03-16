@@ -4,12 +4,8 @@ A simple static website for students looking to receive tutoring.
 
 ### To activate the virtual environment, run:
 
-\$ venv/bin/activate
+pipenv install -r requirements.txt
 
-### to install all packages run the command:
+pipenv run python website.py
 
-\$ pip install -r requirements.txt
-
-### Yagmail setup will need to be done on local machine before use
-
-### Google Analytics will need to be tranferred
+yagmail config needs to be setup in config.py
