@@ -4,6 +4,11 @@
 
 main {
   position: relative;
+  background-color: whitesmoke;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 footer {
