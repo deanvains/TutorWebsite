@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, Response
+from flask import render_template, request, Response, jsonify
 from app.discord import sendDetailsToDiscord
 from flask_restful import Resource, Api
 import sys
@@ -32,5 +32,13 @@ class Form(Resource):
         }
         }
 
+    def post(self):     
+        this = request.json
+        print(this)
+        sendDetailsToDiscord(request.json['name'],request.json['email'],request.json['phone'],request.json['state'],request.json['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
+        return {
+            "message":"Your request has been successful, a tutor will contact you shortly."
+        }
 
-api.add_resource(Form, '/api')
+
+api.add_resource(Form, '/api/form')
