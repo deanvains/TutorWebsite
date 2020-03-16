@@ -23,8 +23,8 @@
 
   <body>
     <header>
-      <a id="logo" href="/www" class="pull-left"><img src="/static/Assets/0.5x/Artboard1@0.5x.png"  width="230"></a> 
-      <img id="header" src="/static/Assets/header.png"  width="100%"> 
+      <a id="logo" href="/www" class="pull-left"><img src="/static/Assets/0.5x/Artboard1@0.5x.png"  width="230" alt="OpportunityLearning"></a> 
+      <img id="header" src="/static/Assets/header.png"  width="100%" alt="header"> 
     </header>
 
     <main>
@@ -53,7 +53,7 @@
 
           <div id="blurb1" class=" blurb1 col-6">
             <h3>Enquire Today</h3>
-            <form action="/submitted" , method="post">
+            <form action="/submitted" method="post">
               <label for="name">Your Name</label><br />
               <input type="text" id="name" name="name" value="e.g Kate Smith" size="50"/><br /><br>
       
@@ -71,13 +71,12 @@
                 <option value="qld"> Queensland</option>
                 <option value="vic"> Victoria</option>
                 <option value="tas"> Tasmania</option>
-                <option value="sau""> South Australia</option>
+                <option value="sau"> South Australia</option>
                 <option value="nt"> Northern Territory</option>
                 <option value="other"> Other</option>
-              
               </select>
-              <br>
-              <br>
+
+              <br><br>
               <p> Your Maths course </p>
               <select id="course" name="course">
                 <option id="default" value="default"> Select: </option>
@@ -97,22 +96,17 @@
                 <option id="foundation" value="foundation"> Foundation </option>
                 <option id="extension" value="extension"> Extension </option>
               </select>
-  
-              <br>
-              <br>
+              <br><br>
               <input id="btn2" type="submit" value="Enquire Now" />
             </form>
           </div>
-         
         </div>
-    </div> 
+      </div> 
 
     <div class="container text-center">
       <br><br><br><br> <br>
       <h1> How we help you learn </h1>
       <br> <br>
-
-  
       <div class="row">
 
       <div class="col-6">
@@ -141,13 +135,13 @@
         <br>
         <div>
     </div>
+      </div>
+      </div>
+    </div>
   </main>
 
   <script>
-    //Get the button
     var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {scrollFunction()};
     
     function scrollFunction() {
@@ -158,14 +152,11 @@
       }
     }
     
-    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
     </script>
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
       <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -183,6 +174,7 @@
         crossorigin="anonymous"
       ></script>
     
+      <!--Dynamic Form Field Changing-->
       <script>
         $("#state").change(function(){
           switch($("#state").val()){
@@ -377,9 +369,7 @@
             break;
           }
           }
-
         })
-
       </script>
   </body>
 </html>

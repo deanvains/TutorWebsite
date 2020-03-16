@@ -11,3 +11,5 @@ A simple static website for students looking to receive tutoring.
 \$ pip install -r requirements.txt
 
 ### Yagmail setup will need to be done on local machine before use
+
+### Google Analytics will need to be tranferred

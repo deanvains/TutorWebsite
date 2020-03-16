@@ -1,6 +1,6 @@
 import yagmail
 
-def sendDetailsToDiscord(name, email, phone, state, course, address, browser):
+def sendDetailsToEmail(name, email, phone, state, course, address, browser):
 
     message = createMessage(name, email, phone, state, course, address, browser)
 

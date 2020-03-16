@@ -3,13 +3,13 @@ import logging
 import os
 from app import app
 from flask import render_template, request, Response, jsonify
-from app.discord import sendDetailsToDiscord
+from app.emailServer import sendDetailsToEmail
 from flask_restful import Resource, Api
 import requests
 
 api = Api(app)
 
-GA_TRACKING_ID="UA-160764698-1"
+GA_TRACKING_ID = os.environ.get("GA_TRACKING_ID")
 
 def track_event(category, action, label=None, value=0):
     data = {
@@ -25,7 +25,6 @@ def track_event(category, action, label=None, value=0):
         'ev': value,  # Event value, must be an integer
         'ua': 'Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14'
     }
-
     response = requests.post(
         'https://www.google-analytics.com/collect', data=data)
 
@@ -35,8 +34,6 @@ def track_event(category, action, label=None, value=0):
     response.raise_for_status()
 
 
-
-@app.route('/',methods=["GET"])
 @app.route('/',methods=["GET"])
 def index():
     track_event(
@@ -50,7 +47,7 @@ def submitted():
         category='Example',
         action='test action')
     if request.method == 'POST':
-        sendDetailsToDiscord(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
+        sendDetailsToEmail(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
         
     if Response.status_code == 400:
         return render_template("/www/error.html",error = 400)
@@ -86,12 +83,10 @@ class Form(Resource):
 
     def post(self):     
         this = request.json
-        print(this)
-        sendDetailsToDiscord(request.json['name'],request.json['email'],request.json['phone'],request.json['state'],request.json['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
+        sendDetailsToEmail(request.json['name'],request.json['email'],request.json['phone'],request.json['state'],request.json['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
         return {
             "message":"Your request has been successful, a tutor will contact you shortly."
         }
-
 
 api.add_resource(Form, '/api')
 
