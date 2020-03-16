@@ -52,12 +52,12 @@
 
           <div id="blurb1" class=" blurb1 col-md-6">
             <h3>Enquire Today</h3>
-            <form action="/submitted" method="post">
+            <form action="http://localhost:59191/submitted" method="post">
               <label for="name">Your Name</label><br />
-              <input type="text" id="name" name="name" placeholder="e.g Kate Smith" size="50"/><br /><br>
+              <input type="text" id="name" name="name" placeholder="John Doe" size="50"/><br /><br>
       
               <label for="email">Your Email</label><br />
-              <input type="email" id="email" name="email" placeholder="e.g. kate.smith@mail.com" size="50"/><br /><br />
+              <input type="email" id="email" name="email" placeholder="e.g. john.doe@email.com" size="50"/><br /><br />
       
               <label for="phone">Yuor contact number</label><br />
               <input type="text" id="phone" name="phone" placeholder="e.g. 0412 336 897" size="50"/><br /><br />
@@ -176,9 +176,10 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145109893-2"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag(){
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
-
         gtag('config', 'UA-145109893-2');
       </script>
     

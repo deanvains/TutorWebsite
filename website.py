@@ -17,7 +17,6 @@ CORS(app)
 
 
 def sendDetailsToEmail(name, email, phone, state, course, address, browser):
-
     message = createMessage(name, email, phone, state, course, address, browser)
     with yagmail.SMTP(config.email, config.phrase) as yag:
         contents = [message]
@@ -52,7 +51,8 @@ def submitted():
             request.environ['REMOTE_ADDR'],
             request.headers.get('User-Agent')
         )
-    except:
+    except Exception as e:
+        print(e)
         return "Error", 400
     return "Success", 200
 
