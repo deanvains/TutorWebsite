@@ -5,12 +5,12 @@ from flask_restful import Resource, Api
 import sys
 api = Api(app)
 
-@app.route('/www',methods=["GET"])
-@app.route('/www',methods=["GET"])
+@app.route('/',methods=["GET"])
+@app.route('/',methods=["GET"])
 def index():
     return render_template("/www/index.html")
 
-@app.route('/www/submitted',methods=["GET", "POST"])
+@app.route('/submitted',methods=["GET", "POST"])
 def submitted():
     if request.method == 'POST':
         sendDetailsToDiscord(request.form['name'],request.form['email'],request.form['phone'],request.form['state'],request.form['course'],request.environ['REMOTE_ADDR'],request.headers.get('User-Agent')) #need to ad request ip and request web client
@@ -28,8 +28,23 @@ class Form(Resource):
                 'email': 'Please input your email',
                 'phone': 'Please input your phone',
                 'state' : 'please input your state',
-                'course' : 'please input your course'
+                'course' : 'The courses available differ per state, please refer to the table below'
+        },
+
+        'State Courses' :
+        {
+            'act': 'Specialist, Methods, Applications, Essential, Year10, Year9, Year8, Year7, other',
+            'nsw' : 'Extension, Advanced, Standard, Year10, Year9, Year8, Year7, other',
+            'nt': 'N/A',
+            'qld':'N/A',
+            'sa' : 'N/A',
+            'tas' : 'General, Methods, Specialised, Preliminary, Year10, Year9, Year8, Year7, other',
+            'vic': 'Specialist, Methods, General, Further Maths, Foundations, Year10, Year9, Year8, Year7, other',
+            'wa' : 'Specialist, Methods, Applications, Essential, Foundations, OLNA, Year10, Year9, Year8, Year7, other',
+            'other': 'N/A'
         }
+
+
         }
 
     def post(self):     
@@ -41,4 +56,4 @@ class Form(Resource):
         }
 
 
-api.add_resource(Form, '/api/form')
+api.add_resource(Form, '/api')

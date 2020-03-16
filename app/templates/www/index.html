@@ -17,6 +17,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+
     <title>Get Tutored Today</title>
   </head>
 
@@ -52,7 +53,7 @@
 
           <div id="blurb1" class=" blurb1 col-6">
             <h3>Enquire Today</h3>
-            <form action="www/submitted" , method="post">
+            <form action="/submitted" , method="post">
               <label for="name">Your Name</label><br />
               <input type="text" id="name" name="name" value="e.g Kate Smith" size="50"/><br /><br>
       
@@ -72,16 +73,29 @@
                 <option value="tas"> Tasmania</option>
                 <option value="sau""> South Australia</option>
                 <option value="nt"> Northern Territory</option>
+                <option value="other"> Other</option>
               
               </select>
               <br>
               <br>
               <p> Your Maths course </p>
               <select id="course" name="course">
-                <option value="applications"> Applications</option>
-                <option value="methods">Methods</option>
-                <option value="specialist">Specialist</option>
-                <option value="olna">ONLA preparation </option>
+                <option id="default" value="default"> Select: </option>
+                <option id="applications" value="applications"> Applications </option>
+                <option id="methods" value="methods"> Methods </option>
+                <option id="specialist" value="specialist"> Specialist </option>
+                <option id="olna" value="olna"> ONLA preparation </option>
+                <option id="essential" value="essential"> Essential</option>
+                <option id="year10" value="Year10"> Year 10 </option>
+                <option id="year9" value="Year9"> Year 9 </option>
+                <option id="year8" value="Year8"> Year 8 </option>
+                <option id="year7" value="Year7"> Year 7 </option>
+                <option id="other" value="other"> Other </option>
+                <option id="general" value="general"> General </option>
+                <option id="preliminary" value="preliminary"> Preliminary </option>
+                <option id="furthermath" value="furthermath"> Further Maths</option>
+                <option id="foundation" value="foundation"> Foundation </option>
+                <option id="extension" value="extension"> Extension </option>
               </select>
   
               <br>
@@ -169,8 +183,203 @@
         crossorigin="anonymous"
       ></script>
     
+      <script>
+        $("#state").change(function(){
+          switch($("#state").val()){
+          case "wa": {
+            console.log($("#state").val())
+            console.log("is working a")
+            $("#default").show();
+            $("#applications").show();
+            $("#methods").show();
+            $("#specialist").show();
+            $("#olna").show();
+            $("#essential").show();
+            $("#year10").show();
+            $("#year9").show();
+            $("#year8").show();
+            $("#year7").show();
+            $("#other").show();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").show();
+            $("#extension").hide();
+            break;
+
+          }
+
+          case "act": {
+            console.log($("#state").val())
+            console.log("is working b")
+            $("#applications").show();
+            $("#methods").show();
+            $("#specialist").show();
+            $("#olna").hide();
+            $("#essential").show();
+            $("#year10").show();
+            $("#year9").show();
+            $("#year8").show();
+            $("#year7").show();
+            $("#other").show();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+
+          case "nsw": {
+            console.log($("#state").val())
+            console.log("is working c")
+            $("#applications").hide();
+            $("#methods").hide();
+            $("#specialist").hide();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").show();
+            $("#year9").show();
+            $("#year8").show();
+            $("#year7").show();
+            $("#other").show();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").show();
+            break;
+          }
+
+          case "qld": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").hide();
+            $("#specialist").hide();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").hide();
+            $("#year9").hide();
+            $("#year8").hide();
+            $("#year7").hide();
+            $("#other").hide();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+
+          case "vic": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").show();
+            $("#specialist").show();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").show();
+            $("#year9").show();
+            $("#year8").show();
+            $("#year7").show();
+            $("#other").show();
+            $("#general").show();
+            $("#preliminary").hide();
+            $("#furthermath").show();
+            $("#foundation").show();
+            $("#extension").hide();
+            break;
+          }
+
+          case "tas": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").show();
+            $("#specialist").show();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").show();
+            $("#year9").show();
+            $("#year8").show();
+            $("#year7").show();
+            $("#other").show();
+            $("#general").show();
+            $("#preliminary").show();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+
+          case "sau": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").hide();
+            $("#specialist").hide();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").hide();
+            $("#year9").hide();
+            $("#year8").hide();
+            $("#year7").hide();
+            $("#other").hide();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+
+          case "nt": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").hide();
+            $("#specialist").hide();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").hide();
+            $("#year9").hide();
+            $("#year8").hide();
+            $("#year7").hide();
+            $("#other").hide();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+
+          case "other": {
+            console.log($("#state").val())
+            console.log("is working")
+            $("#applications").hide();
+            $("#methods").hide();
+            $("#specialist").hide();
+            $("#olna").hide();
+            $("#essential").hide();
+            $("#year10").hide();
+            $("#year9").hide();
+            $("#year8").hide();
+            $("#year7").hide();
+            $("#other").hide();
+            $("#general").hide();
+            $("#preliminary").hide();
+            $("#furthermath").hide();
+            $("#foundation").hide();
+            $("#extension").hide();
+            break;
+          }
+          }
+
+        })
+
+      </script>
   </body>
-  <!-- <footer>
-    <p>Copyright 2020 </p>
-      </footer> -->
 </html>
