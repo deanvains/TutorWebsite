@@ -42,9 +42,23 @@ input, select {
   width: 30em;
 }
 
+li {
+  padding: .8em;
+}
+
+ul {
+  margin: 2em;
+}
+
+#myBtn {
+  width: 15em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .button {
   margin-top: 15px;
-  color: lightgray;
+  color: #EEEEEE;
   background-color: #7718a9;
   border-radius: 4px;
 }
