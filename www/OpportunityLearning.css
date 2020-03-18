@@ -1,7 +1,3 @@
-.row {
-  padding: 40px;
-}
-
 html {
   background-color: whitesmoke;
 }
@@ -14,7 +10,7 @@ h1,
 h2,
 h3 {
   color: #7718a9;
-  margin: 10px;
+  /*margin: 10px;*/
   font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
 }
@@ -27,10 +23,18 @@ article {
 }
 
 form {
-  margin: 10px;
   width: 30em;
 }
 
+#blurb1 h3 p ul li {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contactForm form {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .glyphicon {
   margin-right: 0.5em;
@@ -61,6 +65,7 @@ ul {
   color: #EEEEEE;
   background-color: #7718a9;
   border-radius: 4px;
+  font-weight: bolder;
 }
 
 .button:hover {
@@ -68,8 +73,24 @@ ul {
   background-color: #7920b1;
 }
 
-
-
 .form-control {
   background-color: ghostwhite;
+}
+
+#blurb2 .row {
+
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#blurb1 {
+  text-align: -webkit-center;
+  text-align: center;
+}
+
+#blurb1-cont {
+  display: inline-block;
+  text-align: left;
 }
