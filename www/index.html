@@ -19,10 +19,7 @@
 
 <body>
 <header>
-    <img src="header2.png" width="100%" alt="header">
-    <div id="title" class="container text-center">
-        <h1> Succeed in Maths </h1>
-    </div>
+    <img src="banner.png" width="100%" alt="header">
 </header>
 
 <main>
@@ -36,7 +33,7 @@
                         <li>Specialist</li>
                         <li>Methods</li>
                         <li>Applications</li>
-                        <li>ONLA preparation</li>
+                        <li>OLNA preparation</li>
                     </ul>
                     <p>Personalised learning with qualified Australian teachers</p>
                     <p> One-on-one instruction</p>
@@ -101,7 +98,7 @@
                             <option id="applications" value="applications"> Applications</option>
                             <option id="methods" value="methods"> Methods</option>
                             <option id="specialist" value="specialist"> Specialist</option>
-                            <option id="olna" value="olna"> ONLA preparation</option>
+                            <option id="olna" value="olna"> OLNA preparation</option>
                             <option id="essential" value="essential"> Essential</option>
                             <option id="year10" value="Year10"> Year 10</option>
                             <option id="year9" value="Year9"> Year 9</option>
@@ -188,12 +185,37 @@
 </script>
 
 <script>
-    $("#contactFormContent").submit(function( event ) {
-        alert("Form submitted");
-        event.preventDefault();
+$("#contactFormContent").submit(function( event ) {
+    event.preventDefault();
+    const button = $("#btn2");
+    button.prop('disabled', true);
+    setTimeout(function(){
+        button.prop('disabled', false);
+    }, 3000);
+    $(function() {
+    // Get the form.
+    const form = $('#contactFormContent');
+    const formData = $(form).serialize();
 
-        // TODO: AJAX Request
-    });
+    // Submit the form using AJAX.
+    $.ajax({
+        type: 'POST',
+        url: "https://api.parkcedar.com/submitted",
+        data: formData
+    }).done(function(response) {
+        // Make sure that the formMessages div has the 'success' class.
+        console.log(response.toString());
+        if (response === "Success") {
+            alert("Form submitted successfully");
+            // Clear the form.
+            $('#name').val('');
+            $('#email').val('');
+            $('#phone').val('');
+        } else {
+            alert("Form failed to submit!");
+        }
+    })});
+});
 </script>
 
 <!--Dynamic Form Field Changing-->
