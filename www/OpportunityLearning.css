@@ -15,6 +15,11 @@ h3 {
   font-weight: bold;
 }
 
+p li {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12pt;
+}
+
 header {
 }
 
@@ -77,8 +82,12 @@ ul {
   background-color: ghostwhite;
 }
 
-#blurb2 .row {
+.row {
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
 
+#blurb2 .row {
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
