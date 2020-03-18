@@ -15,7 +15,7 @@ h2,
 h3 {
   color: #7718a9;
   margin: 10px;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
 }
 
@@ -29,6 +29,11 @@ article {
 form {
   margin: 10px;
   width: 30em;
+}
+
+
+.glyphicon {
+  margin-right: 0.5em;
 }
 
 input, select {

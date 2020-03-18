@@ -3,18 +3,26 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"
-    />
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"
+    ></script>
+
     <link href="OpportunityLearning.css" type="text/css" rel="stylesheet"/>
+
+
     <title>Opportunity Learning</title>
 </head>
 
@@ -42,12 +50,15 @@
                 <p> One-on-one instruction</p>
                 <p>Graded practice assessments</p>
             </div>
-
             <div id="blurb1" class=" blurb1 col-lg-6">
                 <h3>Enquire Today</h3>
                 <div class="form-group">
                     <form action="http://localhost:59191/submitted" method="post">
-                        <label for="name">Your Name</label><br>
+
+                        <label for="name">
+                            <span class="glyphicon glyphicon-user" style="color: black"></span>
+                            Name
+                        </label>
                         <input type="text"
                                class="form-control"
                                id="name"
@@ -55,7 +66,10 @@
                                placeholder="John Doe"
                                required
                         />
-                        <label for="email">Your Email</label><br>
+                        <label for="email">
+                            <span class="glyphicon glyphicon-envelope" style="color: black"></span>
+                            Your Email
+                        </label>
                         <input type="email"
                                class="form-control"
                                id="email" name="email"
@@ -63,7 +77,10 @@
                                size="50"
                                required
                         />
-                        <label for="phone">Your contact number</label><br>
+                        <label for="phone">
+                            <span class="glyphicon glyphicon-earphone" style="color: black"></span>
+                            Your contact number
+                        </label>
                         <input type="text"
                                class="form-control"
                                id="phone"
@@ -74,7 +91,7 @@
                                required
                         />
 
-                        <label for="state">State:</label><br>
+                        <label for="state">State:</label>
                         <select class="form-control" id="state" name="state">
                             <option value="wa">Western Australia</option>
                             <option value="act">Australian Capital Territory</option>
@@ -86,7 +103,7 @@
                             <option value="nt"> Northern Territory</option>
                             <option value="other"> Other</option>
                         </select>
-                        <label for="course">Maths Course:</label><br>
+                        <label for="course">Maths Course:</label>
                         <select class="form-control" id="course" name="course">
                             <option id="default" value="default"> Select:</option>
                             <option id="applications" value="applications"> Applications</option>
@@ -169,22 +186,6 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
-
-<script
-        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"
-></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145109893-2"></script>
