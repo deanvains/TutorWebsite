@@ -45,7 +45,7 @@
             </div>
             <div id="contactForm" class=" blurb1 col-lg-6">
                 <div class="form-group">
-                    <form action="http://localhost:59191/submitted" method="post">
+                    <form id="contactFormContent" action="https://api.parkcedar.com/submitted" method="post">
                         <h3>Enquire Today</h3>
                         <label for="name">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
@@ -184,6 +184,15 @@
           });
         } // End if
       });
+    });
+</script>
+
+<script>
+    $("#contactFormContent").submit(function( event ) {
+        alert("Form submitted");
+        event.preventDefault();
+
+        // TODO: AJAX Request
     });
 </script>
 
